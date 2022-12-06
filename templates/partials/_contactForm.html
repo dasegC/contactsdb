@@ -1,8 +1,11 @@
 <form action="/new" method="post" class="card bg-dark text-light">
     <div class="card-body p-4">
         <div class="mb-3">
-            <label for="fullname">Ingresa el nombre:</label>
-            <input type="text" name="fullname" id="fullname" placeholder="_________________" class="form-control rounded-0 bg-dark border-0 text-white">
+            <label for="firstname">Ingresa el nombre:</label>
+            <input type="text" name="firstname" id="firstname" placeholder="_________________" class="form-control rounded-0 bg-dark border-0 text-white">
+
+            <label for="lastname">Ingresa el apellido:</label>
+            <input type="text" name="lastname" id="lastname" placeholder="_________________" class="form-control rounded-0 bg-dark border-0 text-white">
         </div>
 
         <div class="mb-3">
@@ -14,7 +17,14 @@
             <label for="phone">Ingresa teléfono:</label>
             <input type="text" name="phone" placeholder="_________________" class="form-control rounded-0 bg-dark border-0 text-white">
         </div>
-    
-        <i class="fa-regular fa-floppy-disk btn btn-primary green"></i>
+
+        <div class="mb-3">
+            <label for="img">Ingresa url de la imagen:</label>
+            <input type="text" name="img" placeholder="_________________" class="form-control rounded-0 bg-dark border-0 text-white">
+        </div>
+  
+        <button class="btn btn-primary">
+            <i class="fa-regular fa-floppy-disk  green"></i>
+        </button>
     </div>
 </form>

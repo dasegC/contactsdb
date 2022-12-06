@@ -11,3 +11,12 @@ body {
     font-weight: bold;
     font-size: 22px;
 }
+
+.avatar {
+    max-width: 20%;
+}
+
+.borde {
+    border-bottom: 2px solid #fff;
+    padding: 5px;
+}

@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<div class="row">
+<div class="row d-flex justify-content-between">
     <div class="col-md-5">
         
         {% include 'partials/_message.html' %}
@@ -11,28 +11,59 @@
         {% include 'partials/_contactForm.html'%}
     </div>
 
-    <div class="col-md-7">
+    
+    <div class="card mb-1 text-white bg-dark" style="max-width: 540px;">
         {% for contact in contacts %}
-        <div class="card mb-1 text-white bg-dark">
+        <div class="row g-0 borde">
+          <div class="col-md-4">
+            <img src="{{contact.img}}" class="card-img-top " alt="...">
+          </div>
+          <div class="col-md-8">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
-                    <h5>{{contact.fullname}}</h5>
+                    <h5>{{contact.firstname}}, {{contact.lastname}}</h5>
+                    
                     <div>
-                        <a href="{{url_for('contacts.update', id=contact.id)}}" class="btn bg-black text-white btn-sm rounded-0"><i class="fa-regular fa-pen-to-square"></i></a>
-                        <a href="{{url_for('contacts.delete', id=contact.id)}}" class="btn btn-danger btn-sm rounded-0"><i class="fa-regular fa-trash-can"></i></a>
+                        <a href="{{url_for('contacts.update', id=contact.id)}}" class="btn bg-black text-white btn-sm rounded-2"><i class="fa-regular fa-lg fa-pen-to-square"></i></a>
+                        <a href="{{url_for('contacts.delete', id=contact.id)}}" class="btn btn-danger btn-sm rounded-2"><i class="fa-regular fa-lg fa-trash-can"></i></a>
                     </div>
                 </div>
                 <p>{{contact.email}}</p>
                 <p>{{contact.phone}}</p>
             </div>
+          </div>
         </div>
         {% endfor %}
-    </div>
-
+      </div>
     
 
     
 
 </div>    
 
-{% endblock content %}%}
+{% endblock content %}
+
+
+<div class="col-md-4">
+    {% for contact in contacts %}
+    <div class="card mb-1 text-white bg-dark style="max-width:500px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{contact.img}}" class="card-img-top " alt="...">
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <h5>{{contact.firstname}}, {{contact.lastname}}</h5>
+                
+                <div>
+                    <a href="{{url_for('contacts.update', id=contact.id)}}" class="btn bg-black text-white btn-sm rounded-0"><i class="fa-regular fa-pen-to-square"></i></a>
+                    <a href="{{url_for('contacts.delete', id=contact.id)}}" class="btn btn-danger btn-sm rounded-0"><i class="fa-regular fa-trash-can"></i></a>
+                </div>
+            </div>
+            <p>{{contact.email}}</p>
+            <p>{{contact.phone}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>

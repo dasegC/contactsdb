@@ -18,11 +18,13 @@ def index():
 
 @contacts.route("/new", methods=["POST"])
 def add_contact():
-    fullname = request.form["fullname"]
+    firstname = request.form["firstname"]
+    lastname = request.form["lastname"]
     email = request.form["email"]
     phone = request.form["phone"]
+    img = request.form["img"]
 
-    new_contact = Contact(fullname, email, phone)
+    new_contact = Contact(firstname, lastname, email, phone, img)
 
     db.session.add(new_contact)  # Agrega el contacto a la db
     db.session.commit()  # Acaba con la conexión a la db
@@ -47,9 +49,11 @@ def about():
 def update(id):
     contact = Contact.query.get(id)  # Consulta el contacto
     if request.method == "POST":
-        contact.fullname = request.form["fullname"]
+        contact.firstname = request.form["firstname"]
+        contact.lastname = request.form["lastname"]
         contact.email = request.form["email"]
         contact.phone = request.form["phone"]
+        contact.img = request.form["img"]
 
         db.session.commit()
 
