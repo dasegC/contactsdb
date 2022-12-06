@@ -1,0 +1,13 @@
+body {
+    background-color: #121212;
+}
+
+.bg-black {
+    background-color: #09090909;
+}
+
+.green {
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 22px;
+}

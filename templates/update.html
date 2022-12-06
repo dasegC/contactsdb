@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block content%}
+
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body bg-dark text-white">
+      <h1>Actualizar Contacto</h1>
+  
+      <form action="{{url_for('contacts.update', id=contact.id)}}" method="POST">
+        <div class="mb-3">
+          <label for="fullname">Actualiza el nombre:</label>
+          <input type="text" name="fullname" id="fullname" placeholder="Ingrese su nombre" value="{{contact.fullname}}">
+        </div>
+        <div class="mb-3">
+          <label for="email">Actualiza el email:</label>
+          <input type="email" name="email" placeholder="Ingrese su email " value="{{contact.email}}">
+        </div>
+        <div class="mb-3">
+          <label for="phone">Actualiza teléfono:</label>
+          <input type="text" name="phone" placeholder="Ingrese su teléfono" value="{{contact.phone}}">
+
+        </div>
+  
+        <button class="btn btn-primary green"><i class="fa-regular fa-floppy-disk"></i></button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
