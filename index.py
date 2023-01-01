@@ -1,7 +1,6 @@
 from app import app
 from utils.db import db
 
-import config
 
 db.init_app(app)
 with app.app_context():
